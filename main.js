@@ -21,16 +21,37 @@ function add() {
     
     let input = document.getElementById('input');
     let errorOutput = document.getElementById('error');
-    if(input.value.trim() === "" || input.value === null) {
-        errorOutput.innerHTML = "Please enter a todo item.";
-        return;
-    }
+        if(input.value.trim() === "" || input.value === null) {
+            errorOutput.innerHTML = "Please enter a todo item.";
+            return;
+        }
     errorOutput.innerHTML = "";
+
     let li = document.createElement('li');
-    li.textContent = input.value.trim();
+    
+    let span = document.createElement('span');
+    let checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+    checkbox.addEventListener('change', function() {
+        if(this.checked) {
+            span.style.textDecoration = "line-through";
+            span.style.color = "green";
+        }
+            else {
+                span.style.textDecoration = "none";
+                span.style.color = "black";
+            }
+        });
+    span.appendChild(checkbox);
+    let label = document.createElement('label');
+    label.textContent = input.value.trim();
+    span.appendChild(label);
+
     let btn = document.createElement('button');
     btn.textContent = "Remove";
     btn.addEventListener('click', remove);
+
+    li.appendChild(span);
     li.appendChild(btn);
     document.getElementById('list').appendChild(li);
 
