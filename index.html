@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Todo list</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+        <h1>My Todo List</h1>
+        <h3 id="date"></h3>
+    </header>
+    <div class="main">
+        <div class="inputSection"> 
+            <input type="text" id="input" placeholder="Todo"/>
+            <button id="addTodo" onClick="add">Add +</button> <br/>
+        </div>
+    <p id="error"></p>
+    <section>
+        <div id="empty">You're free today YAY</div>
+        <ul id="list">
+            <!-- Todo items will appear here --> 
+        </ul>
+    </section>
+    </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
